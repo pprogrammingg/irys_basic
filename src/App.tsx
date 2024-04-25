@@ -21,9 +21,11 @@ function App() {
 		}
 		console.log("provider=", provider);
 		const network = "devnet";
-		const token = "bnb";
+		const token = "avalanche";
+
+		const rpcUrl = "https://avalanche-fuji-c-chain-rpc.publicnode.com"; // Required for devnet
  
-		const wallet = { name: "ethersv6", provider: provider };
+		const wallet = { rpcUrl: rpcUrl, name: "ethersv6", provider: provider };
 		const webIrys = new WebIrys({ network, token, wallet });
 		await webIrys.ready();
 		setConnectedAddress(webIrys.address!);
